@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body id="tela">
+
+    <a href="#" onmouseover="cor('blue')">Azul</a>
+    <a href="#" onmouseover="cor('green')">Verde</a>
+    <a href="#" onmouseover="cor('brown')">Marrom</a>
+    <a href="#" onmouseover="cor('white')">Branco</a>
+    
+
+    <script>
+        function cor(cor){
+            var tela = document.getElementById("tela");
+            tela.style.backgroundColor = cor;
+        }
+    </script>
+</body>
+</html>

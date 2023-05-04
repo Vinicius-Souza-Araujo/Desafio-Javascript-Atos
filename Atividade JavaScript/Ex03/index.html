@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body id="tela">
+    <label for="cor">Selecione uma cor: </label>
+        <div>Azul<input  type="radio" name="cor" value="blue" onclick="cor(value)"></div>
+        <div>Verde<input type="radio" name="cor" value="green" onclick="cor(value)"></div>
+        <div>Marrom<input type="radio" name="cor" value="brown" onclick="cor(value)"></div>
+        <div>Branco<input type="radio" name="cor" value="white" onclick="cor(value)"></div>
+    
+        <script>
+            function cor(cor){
+                var tela = document.getElementById("tela");
+                tela.style.backgroundColor = cor;
+            }
+        </script>
+</body>
+</html>

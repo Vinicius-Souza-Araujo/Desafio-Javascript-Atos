@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    
+    <form>
+
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha: </label>
+        <input  type="password" id="senha" name="senha" required>
+
+        <label for="confirmarsenha">Senha: </label>
+        <input onfocusout="validarLogin()" type="password" id="confirmarsenha" name="confirmarsenha" required>
+
+        <button id="botao" type="submit" disabled>Enviar</button>
+
+        <script>
+        
+
+            function validarLogin(){
+               
+                var botao= document.getElementById("botao");
+                var senha= document.getElementById("senha");
+                var confirmarsenha= document.getElementById("confirmarsenha");
+               
+                if(senha.value === confirmarsenha.value){
+                    
+                    if(parseInt(senha.value.length) > 5 && parseInt(senha.value.length) <11 ){
+                        console.log(confirmarsenha.value);
+                        botao.disabled = false;
+                    }else{
+                    alert("A senha deve ter entre 6 a 10 caracteres!");
+                }
+                    
+                    
+                }else{
+                    alert("Senha e confirmar senha estão diferentes!");
+                }
+                
+            }
+        </script>
+
+    </form>
+</body>
+</html>

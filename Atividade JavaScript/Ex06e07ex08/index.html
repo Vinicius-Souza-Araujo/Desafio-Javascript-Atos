@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06e07ex08</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+</head>
+<body>
+
+    <p id="paragrafo">Parágrafo de teste para os botões.</p>
+
+    <div>
+        <button onclick="CorFonte('white')">Fonte branca</button>
+        <button onclick="CorFonte('black')">Fonte preta</button>
+        <button onclick="CorFundo('white')">Fundo branco</button>
+        <button onclick="CorFundo('black')">Fundo preto</button>
+    </div>
+
+    <div>
+        <button onclick="aumentarFonte()">+</button>
+        <button onclick="diminuirFonte()">-</button>
+    </div>
+
+    <div>
+        <button onclick="upperCaseFonte()">maiúscula</button>
+        <button onclick="lowerCaseFonte()()">minúscula</button>
+    </div>
+
+    <script>
+
+        function CorFonte(cor){
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.color = cor;  
+        }
+
+        function CorFundo(cor){
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.backgroundColor = cor;  
+        }
+
+        var cont = 16;
+
+        function aumentarFonte(){
+            
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.fontSize = `${cont = cont + 1}px`;  
+        }
+
+        function diminuirFonte(){
+            
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.fontSize = `${cont = cont - 1}px`;  
+        }
+
+        function upperCaseFonte(){
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.textTransform="uppercase";
+        }
+
+        function lowerCaseFonte(){
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.textTransform="lowercase";
+        }
+
+
+        
+    </script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <form>
+        <label>Selecione pelo menos duas das opções: </label>
+        <input class="checkboxs" type="checkbox" name="op1" value="op1" id="op1" onclick="ativarBtn()">Opção 1
+        <input class="checkboxs" type="checkbox" name="op2" value="op2" id="op2" onclick="ativarBtn()">Opção 2
+        <input class="checkboxs" type="checkbox" name="op3" value="op3" id="op2" onclick="ativarBtn()">Opção 3
+        <input class="checkboxs" type="checkbox" name="op4" value="op4" id="op4" onclick="ativarBtn()">Opção 4
+
+        <button id="botao" type="submit" disabled>Enviar</button>
+    </form>
+    
+
+    <script>
+        
+
+        function ativarBtn(){
+            var cont = 0;
+            var botao= document.getElementById("botao");
+            var checkboxs = document.getElementsByClassName("checkboxs");
+            for(i = 0; i < checkboxs.length; i++){
+                if(checkboxs[i].checked){
+                    cont = cont + 1;
+                }
+            }
+            if(cont >= 2){
+                botao.disabled = false;
+
+            }else{
+                botao.disabled = true;
+            }
+            
+        }
+    </script>
+</body>
+</html>
