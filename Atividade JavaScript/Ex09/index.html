@@ -15,34 +15,41 @@
         <input type="email" id="email" name="email" required>
 
         <label for="senha">Senha: </label>
-        <input  type="password" id="senha" name="senha" required>
+        <input type="password" id="senha" name="senha" required>
 
-        <label for="confirmarsenha">Senha: </label>
-        <input onfocusout="validarLogin()" type="password" id="confirmarsenha" name="confirmarsenha" required>
+        <label for="confirmarsenha">Confirmar Senha: </label>
+        <input type="password" id="confirmarsenha" name="confirmarsenha" required>
 
-        <button id="botao" type="submit" disabled>Enviar</button>
-
+        <button onclick="validarSenha()"  id="botao" type="submit">Enviar</button>
+        
+        
         <script>
         
 
-            function validarLogin(){
+            function validarSenha(){
                
                 var botao= document.getElementById("botao");
                 var senha= document.getElementById("senha");
                 var confirmarsenha= document.getElementById("confirmarsenha");
                
-                if(senha.value === confirmarsenha.value){
+                if(parseInt(senha.value.length) > 5 && parseInt(senha.value.length) <11){
                     
-                    if(parseInt(senha.value.length) > 5 && parseInt(senha.value.length) <11 ){
-                        console.log(confirmarsenha.value);
+                    if(senha.value === confirmarsenha.value){
                         botao.disabled = false;
                     }else{
-                    alert("A senha deve ter entre 6 a 10 caracteres!");
-                }
+                    alert("Senha e confirmar senha estão diferentes!");
                     
+                    senha.value = "";
+                    confirmarsenha.value = "";
+                }
+                
+                
                     
                 }else{
-                    alert("Senha e confirmar senha estão diferentes!");
+                    alert("A senha deve ter entre 6 a 10 caracteres!");
+                    
+                    senha.value = "";
+                    confirmarsenha.value = "";
                 }
                 
             }
