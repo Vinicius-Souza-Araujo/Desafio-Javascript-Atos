@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <form>
+
+        <div>
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" name="nome">
+        </div>
+        
+
+        <div><label for="cor">Pessoa Física ou Pessoa Jurídica?</label></div>
+        <div>Pessoa Física<input onclick="validarTipoPessoa()"  type="radio" name="pessoa" value="fisica" id="fisica"></div>
+        <div>Pessoa Jurídica<input onclick="validarTipoPessoa()"  type="radio" name="pessoa" value="juridica" id="juridica"></div>
+       
+        <div>
+            <label for="cpf">CPF: </label>
+            <input type="text" id="cpf" name="cpf" disabled>
+        </div>
+        
+
+        <div></div>
+        <label for="cnpj">CNPJ: </label>
+        <input type="text" id="cnpj" name="cnpj" disabled>
+
+        <div></div>
+        <label for="dataNasc">Data de Nascimento: </label>
+        <input type="date" id="dataNasc" name="dataNasc" disabled>
+
+        <div></div>
+        <label for="endereco">Endereço: </label>
+        <input type="text" id="endereco" name="endereco">
+
+        <div></div>
+        <label for="cep">CEP: </label>
+        <input type="text" id="cep" name="cep" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+
+        <div></div>
+        <label for="telefone">Telefone: </label>
+        <input type="text" id="telefone" name="telefone">
+
+        <div></div>
+        <label for="email">E-mail: </label>
+        <input type="email" id="email" name="email">
+
+       <div>
+            <button type="submit">Enviar</button>
+       </div> 
+
+        
+    </form>
+
+
+    <script>
+        
+
+        function validarTipoPessoa(){
+           
+            var fisica = document.getElementById("fisica");
+            var juridica = document.getElementById("juridica");
+            var cpf = document.getElementById("cpf");
+            var cnpj = document.getElementById("cnpj");
+            var dataNasc = document.getElementById("dataNasc");
+           
+            if(fisica.checked){
+                cpf.disabled = false;
+                cnpj.value = ""; 
+                cnpj.disabled = true;
+                dataNasc.disabled = false;
+            }else{
+                cnpj.disabled = false;
+                cpf.disabled = true;
+                dataNasc.disabled = true;
+                cpf.value = ""; 
+            }    
+            
+        }
+        
+    </script>
+</body>
+</html>
